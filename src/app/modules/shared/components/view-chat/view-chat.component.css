@@ -1,0 +1,83 @@
+.chat-room{
+  margin: auto;
+  height: auto;
+}
+.chat-room-image{
+  vertical-align: center;
+  text-align: center;
+  font-size: 24px;
+  float: left;
+  height:30px;
+  width:30px;
+  border-radius:42px;
+  border:solid;
+  padding:auto;
+  border-width: thin;
+  border-color: aqua;
+}
+.chat-room-name
+{ background-color: transparent;
+  border: none;
+  height: 100%;
+  vertical-align: center;
+  text-align: center;
+}
+.chat-room-additional{
+  float: right;
+  border: none;
+  background-color: transparent;
+  height: 90%;
+  font-size: 30px;
+}
+.chat-nav
+{
+  height: 34px;
+  vertical-align: center;
+}
+hr
+{
+margin: 0px;
+}
+.chat-room-status{
+  background-color: transparent;
+  border: none;
+  font-size:large;
+  vertical-align: center;
+  color: green;
+
+}
+.chat-messages{
+  width: 100%;
+  max-height:300px;
+  overflow-y: auto;
+
+}
+.chat-message{
+  max-width: 182px;
+  height:fit-content;
+}
+/* .message-table-body{
+  display: inline-block;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;} */
+  .tableFixHead {
+    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+    height: 320px; /* gives an initial height of 200px to the table */
+  }
+  .tableFixHead thead th {
+    position: sticky; /* make the table heads sticky */
+    top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  }
+  table {
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    width: 100%;
+    max-height:300px;
+  }
+  th,
+  td {
+    padding: 8px 16px;
+  }
+  th {
+    background: #eee;
+  }

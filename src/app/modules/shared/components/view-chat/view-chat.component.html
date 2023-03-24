@@ -1,1 +1,31 @@
-<p>view-chat works!</p>
+<div class='chat-room' >
+  <div class="chat-nav">
+    <img src="" alt="🫥" class="chat-room-image">
+    <button class="chat-room-name">Rhythm</button>
+    <button class="chat-room-status">•</button>
+    <button class="chat-room-additional">☰</button>
+  </div>
+</div>
+  <hr>
+<!-- <div  style='overflow-x: scroll;'>
+<ng-container>
+<table class="chat-messages" style='overflow-x: scroll;'>
+ <tbody class="message-table-body">
+
+</tbody>
+</table>
+</ng-container>
+</div> -->
+<div class="tableFixHead">
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let message of messages">
+        <td [style.text-align]="message.owner=='baibhav'?'right':'left'" >
+             <button class="chat-message">{{message.message}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

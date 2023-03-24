@@ -4,25 +4,28 @@
    border-radius: 3px;
    border-width: thin;
    width: 300px;
+   margin: auto;
    height: 386px;
 }
 .parent-window{
     text-align: -webkit-center;
 }
 .chat-view{
-    min-height: 350px;
+    min-height: 363px;
 }
 .chat-message{
-    width: 192px;
+    max-width: 192px;
+    height:auto;
     text-align: center;
 }
 .chat-attachment{
     width: 50px;
     text-align:center;
     color:black;
-    
+
 }
 .chat-send{
     width: 50px;
     text-align: center;
 }
+
