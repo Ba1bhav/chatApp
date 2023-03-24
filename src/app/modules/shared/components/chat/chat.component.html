@@ -1,0 +1,16 @@
+<div class="parent-window">
+<div class="chat-box">
+<div class="chat-view">
+    <ng-container>
+        <app-view-chat></app-view-chat>
+    </ng-container>
+</div>
+<form [formGroup]="chatForm" (ngSubmit)="out()" >
+    <div>
+        <button type="button" class="chat-attachment">Attach</button>
+    <input type="text"  placeholder="Type Message ..." formControlName="message"  class="chat-message">
+    <button type="submit" class="chat-send">Send</button>
+    </div>
+</form>
+</div>
+</div>
