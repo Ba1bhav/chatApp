@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthloginService } from 'src/app/services/auth/authlogin.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,15 +9,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
  loginForm:FormGroup;
  errorToggle:boolean=false;
-  constructor(){
+  constructor(private requestHandler:AuthloginService){
     this.loginForm=new FormGroup({
-      phoneNo:new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern('[0-9]{10}')]),
+      phone:new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern('[0-9]{10}')]),
       otp:new FormControl('',[Validators.required,Validators.maxLength(6),Validators.minLength(6)])
 
     })
   }
   logIn(){
-    console.log(this.loginForm.value)
+   this.requestHandler.verifyOtp(this.loginForm.value).subscribe((response:any)=>
+   {
+      console.log('Response Success !'+response )
+   })
   }
    get _loginControls(){
     return this.loginForm.controls
@@ -29,6 +33,6 @@ export class LoginComponent {
     value.value=value.value.match('[0-9]+')
   }
   sendOtp(){
-    console.log(this.loginForm.value.phoneNo)
+    this.requestHandler.getOtp(this.loginForm.value.phone).subscribe((response:any)=>console.log(response))
   }
 }

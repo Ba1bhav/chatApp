@@ -11,17 +11,17 @@
       </div>
       <br>
       <div class="form-control-col form-center">
-        <input type="text" disabled placeholder="phoneNo" style="width:100px; text-align: center;">
-        <input type="phoneNo"  placeholder="+91xxxxxxxxxx" class="field" formControlName="phoneNo" (input)="numberCheck($event.target)">
+        <input type="text" disabled placeholder="phone" style="width:100px; text-align: center;">
+        <input type="phone"  placeholder="+91xxxxxxxxxx" class="field" formControlName="phone" (input)="numberCheck($event.target)">
       </div>
       <div class="form-control-col form-center">
-        <span *ngIf="_loginControls['phoneNo'].invalid && _loginControls['phoneNo'].touched" class="field"
+        <span *ngIf="_loginControls['phone'].invalid && _loginControls['phone'].touched" class="field"
           style="color: red;">Enter Valid Phone Number !</span>
       </div>
       <br>
       <div class="form-control-col form-center">
-        <button *ngIf="_loginControls['phoneNo'].invalid " type="button" style="width:100px; text-align: center; color: grey;background-color:transparent;border-width: thin;" (click)="errorToggler()" >Send OTP</button>
-        <button *ngIf="!_loginControls['phoneNo'].invalid" type="button" style="width:100px; text-align: center; color: grey;background-color:transparent;border-width: thin;" (click)="sendOtp()" >Send OTP</button>
+        <button *ngIf="_loginControls['phone'].invalid " type="button" style="width:100px; text-align: center; color: grey;background-color:transparent;border-width: thin;" (click)="errorToggler()" >Send OTP</button>
+        <button *ngIf="!_loginControls['phone'].invalid" type="button" style="width:100px; text-align: center; color: grey;background-color:transparent;border-width: thin;" (click)="sendOtp()" >Send OTP</button>
         <input type="OTP" placeholder="Enter Your OTP" class="field" formControlName="otp">
       </div>
       <div class="form-control-col form-center">
