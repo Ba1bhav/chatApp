@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ViewChatComponent } from '../view-chat/view-chat.component';
 import { messages } from 'src/assets/roomchat';
 @Component({
   selector: 'app-chat',
