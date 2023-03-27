@@ -10,8 +10,8 @@ export class LoginComponent {
  errorToggle:boolean=false;
   constructor(){
     this.loginForm=new FormGroup({
-      phoneNo:new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
-      password:new FormControl('',Validators.required)
+      phoneNo:new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern('[0-9]{10}')]),
+      otp:new FormControl('',[Validators.required,Validators.maxLength(6),Validators.minLength(6)])
 
     })
   }
@@ -24,5 +24,11 @@ export class LoginComponent {
   errorToggler(){
     this.errorToggle=true;
     setTimeout(()=>this.errorToggle=false,2000)
+  }
+  numberCheck(value:any){
+    value.value=value.value.match('[0-9]+')
+  }
+  sendOtp(){
+    console.log(this.loginForm.value.phoneNo)
   }
 }

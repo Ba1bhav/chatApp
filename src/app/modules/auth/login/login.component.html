@@ -12,7 +12,7 @@
       <br>
       <div class="form-control-col form-center">
         <input type="text" disabled placeholder="phoneNo" style="width:100px; text-align: center;">
-        <input type="phoneNo"  placeholder="+91xxxxxxxxxx" class="field" formControlName="phoneNo">
+        <input type="phoneNo"  placeholder="+91xxxxxxxxxx" class="field" formControlName="phoneNo" (input)="numberCheck($event.target)">
       </div>
       <div class="form-control-col form-center">
         <span *ngIf="_loginControls['phoneNo'].invalid && _loginControls['phoneNo'].touched" class="field"
@@ -20,12 +20,13 @@
       </div>
       <br>
       <div class="form-control-col form-center">
-        <input type="text" disabled placeholder="Password" style="width:100px; text-align: center;">
-        <input type="password" placeholder="Password" class="field" formControlName="password">
+        <button *ngIf="_loginControls['phoneNo'].invalid " type="button" style="width:100px; text-align: center; color: grey;background-color:transparent;border-width: thin;" (click)="errorToggler()" >Send OTP</button>
+        <button *ngIf="!_loginControls['phoneNo'].invalid" type="button" style="width:100px; text-align: center; color: grey;background-color:transparent;border-width: thin;" (click)="sendOtp()" >Send OTP</button>
+        <input type="OTP" placeholder="Enter Your OTP" class="field" formControlName="otp">
       </div>
       <div class="form-control-col form-center">
-        <span *ngIf="_loginControls['password'].invalid && _loginControls['password'].touched" class="field"
-          style="color: red;"> Password Is Required !</span>
+        <span *ngIf="_loginControls['otp'].invalid && _loginControls['otp'].touched" class="field"
+          style="color: red;"> Invalid  OTP !</span>
       </div>
       <br>
       <br>
